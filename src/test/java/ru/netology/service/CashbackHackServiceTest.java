@@ -39,7 +39,27 @@ public class CashbackHackServiceTest {
     @Test
     public void testRemain4() {
         int amount = 1100;
-        int expected = 0;
+        int expected = 900;
+        CashbackHackService service = new CashbackHackService();
+        service.remain(amount);
+        int actual = service.remain(amount);
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testRemain5() {
+        int amount = 1001;
+        int expected = 999;
+        CashbackHackService service = new CashbackHackService();
+        service.remain(amount);
+        int actual = service.remain(amount);
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testRemain6() {
+        int amount = 999;
+        int expected = 1;
         CashbackHackService service = new CashbackHackService();
         service.remain(amount);
         int actual = service.remain(amount);
